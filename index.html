@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BranchBench — JavaScript / WebAssembly</title>
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div class="masthead"><span class="brand">BRANCHBENCH <span>/ 01</span></span><span class="masthead-note">JAVASCRIPT ↔ WEBASSEMBLY</span></div>
+        <div class="header-content"><h1>Treegenerator<br /></h1><p>Prozedurale Baumgeometrie, berechnet mit JavaScript und AssemblyScript. Es werden die gleichen Parameter und gleicher Algorithmus verwendet.</p></div>
+      </header>
+
+      <div class="layout">
+        <section class="canvas-card" aria-label="Generierter Baum">
+          <div class="canvas-heading"><span>FIG. 01 — GENERIERTER BAUM</span><span>JS / WASM</span></div>
+          <canvas id="tree" width="900" height="650"></canvas>
+          <div class="canvas-caption"><span id="tree-label">Baum wird geladen …</span><span>KOORDINATEN / CANVAS</span></div>
+        </section>
+
+        <aside class="panel">
+          <div class="panel-heading"><span class="section-number">01 / PARAMETER</span><h2>Versuchsaufbau</h2><p>Werte einstellen und Baum oder Messung starten.</p></div>
+          <label for="seed">Seed <input id="seed" type="number" min="0" max="4294967295" step="1" value="48271" /></label>
+          <label for="depth">Tiefe <output id="depth-value">11</output><input id="depth" type="range" min="1" max="15" value="11" /></label>
+          <label for="angle">Astwinkel <output id="angle-value">28°</output><input id="angle" type="range" min="0" max="60" value="28" /></label>
+          <label for="randomness">Zufall <output id="randomness-value">9°</output><input id="randomness" type="range" min="0" max="30" value="9" /></label>
+          <div class="actions"><button id="generate" type="button" disabled>Baum erzeugen</button><button id="benchmark" type="button" class="secondary" disabled>Benchmark starten</button></div>
+          <p id="status" class="status" role="status">WebAssembly wird geladen …</p>
+          <div id="results" class="results" hidden>
+            <span class="section-number">02 / MESSUNG</span><h2>Ergebnis</h2>
+            <dl><div><dt>Äste</dt><dd id="branches"></dd></div><div><dt>Wiederholungen</dt><dd id="iterations"></dd></div><div><dt>JavaScript</dt><dd id="js-time"></dd></div><div><dt>WebAssembly</dt><dd id="wasm-time"></dd></div><div class="speedup"><dt>Speedup</dt><dd id="speedup"></dd></div><div><dt>Geometrie</dt><dd id="equivalent"></dd></div></dl>
+            <p class="hint">Gemessen wird nur die Berechnung. Laden und Zeichnen zählen nicht zur Laufzeit.</p>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

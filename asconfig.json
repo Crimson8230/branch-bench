@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "release": {
+      "outFile": "public/tree.wasm",
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "runtime": "stub",
+      "exportRuntime": false
+    }
+  }
+}

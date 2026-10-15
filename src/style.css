@@ -1,0 +1,69 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #232722;
+  background: #f8f7f2;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input { font: inherit; }
+
+.app { max-width: 1440px; margin: 0 auto; padding: 0 42px 64px; }
+.masthead { display: flex; justify-content: space-between; gap: 20px; align-items: center; min-height: 58px; border-bottom: 1px solid #232722; }
+.brand, .masthead-note, .section-number, .canvas-heading, .canvas-caption, label, .hint { font-family: Consolas, 'Courier New', monospace; }
+.brand { font-size: 13px; font-weight: 700; letter-spacing: .03em; }
+.brand span { color: #85877f; font-weight: 400; }
+.masthead-note { font-size: 11px; color: #64695e; }
+.header-content { display: flex; align-items: end; justify-content: space-between; gap: 32px; padding: 36px 0 40px; }
+h1 { max-width: 700px; margin: 0; font: normal clamp(40px, 5.2vw, 76px)/.98 Georgia, 'Times New Roman', serif; letter-spacing: -.045em; }
+.header-content p { max-width: 295px; margin: 0 0 5px; color: #5c625b; font-size: 14px; line-height: 1.5; }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 315px; gap: 32px; align-items: start; }
+.canvas-card { min-width: 0; border: 1px solid #92978b; background: #f2f0e7; }
+.canvas-heading, .canvas-caption { display: flex; justify-content: space-between; gap: 12px; padding: 12px 16px; font-size: 10px; letter-spacing: .025em; color: #5e665b; }
+.canvas-heading { border-bottom: 1px solid #c7c9bf; }
+.canvas-caption { border-top: 1px solid #c7c9bf; }
+canvas { display: block; width: 100%; height: auto; background: #f2f0e7; }
+
+.panel { border-top: 2px solid #232722; padding-top: 14px; }
+.panel-heading { padding-bottom: 19px; border-bottom: 1px solid #c8cbc2; margin-bottom: 9px; }
+.section-number { display: block; color: #55715c; font-size: 10px; font-weight: 700; letter-spacing: .03em; }
+h2 { font: normal 25px/1.1 Georgia, 'Times New Roman', serif; letter-spacing: -.025em; margin: 12px 0 0; }
+.panel-heading p { color: #737970; font-size: 12px; line-height: 1.45; margin: 7px 0 0; }
+label { display: block; padding: 15px 0 17px; border-bottom: 1px solid #d9dbd3; color: #4e554e; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+label output { float: right; color: #232722; font-size: 12px; }
+input[type=number] { display: block; width: 100%; margin-top: 11px; padding: 9px 10px; border: 1px solid #aeb4a9; border-radius: 0; background: #fff; color: #232722; font-size: 14px; font-weight: 400; font-variant-numeric: tabular-nums; }
+input[type=range] { display: block; width: 100%; margin: 14px 0 0; accent-color: #394d3d; }
+input:focus-visible, button:focus-visible { outline: 2px solid #32744d; outline-offset: 3px; }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 23px; }
+button { min-height: 41px; border: 1px solid #263e2e; border-radius: 0; background: #263e2e; color: #fff; padding: 9px 10px; font-size: 12px; font-weight: 700; cursor: pointer; }
+button.secondary { background: transparent; color: #263e2e; }
+button:hover:not(:disabled) { background: #43684c; color: #fff; }
+button:disabled { opacity: .5; cursor: wait; }
+.status { min-height: 18px; margin: 13px 0 0; color: #62685f; font-size: 11px; line-height: 1.5; }
+.results { margin-top: 25px; padding-top: 15px; border-top: 2px solid #232722; }
+.results h2 { font-size: 23px; margin: 9px 0 14px; }
+dl { margin: 0; border-top: 1px solid #c8cbc2; }
+dl div { display: flex; justify-content: space-between; gap: 10px; padding: 9px 0; border-bottom: 1px solid #d9dbd3; font-size: 12px; }
+dt { color: #676d64; }
+dd { margin: 0; font-family: Consolas, 'Courier New', monospace; font-variant-numeric: tabular-nums; font-weight: 700; text-align: right; }
+dl .speedup { font-size: 15px; color: #263e2e; }
+.speedup dd { color: #263e2e; }
+.hint { margin: 14px 0 0; color: #747a71; font-size: 10px; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .app { padding: 0 24px 48px; }
+  .layout { grid-template-columns: 1fr; gap: 28px; }
+  .header-content { padding: 31px 0; }
+}
+
+@media (max-width: 600px) {
+  .app { padding: 0 16px 36px; }
+  .masthead { min-height: 52px; }
+  .masthead-note { display: none; }
+  .header-content { display: block; }
+  h1 { font-size: clamp(42px, 12vw, 60px); }
+  .header-content p { margin: 18px 0 0; }
+  .canvas-heading, .canvas-caption { font-size: 9px; }
+}
